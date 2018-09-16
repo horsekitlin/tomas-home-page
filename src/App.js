@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Container, Menu, Input, Grid, Card, Image, Divider, Button } from 'semantic-ui-react';
+import { Container, Menu, Grid, Card, Image, Divider, Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 const cards = [
