@@ -4,6 +4,18 @@ import 'semantic-ui-css/semantic.min.css';
 
 const cards = [
   {
+    image: 'http://media.tumblr.com/c98ae6c631289344128c90473e1bc532/tumblr_inline_mlrdsdFfoW1qz4rgp.jpg',
+    header: 'Tomas Blog',
+    github: 'https://github.com/horsekitlin/horsekitlin.github.io',
+    members: [
+      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
+    ],
+    description: [
+      'Tomas blog Area',
+      '陸續新增中...'
+    ]
+  },
+  {
     image: 'https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png',
     header: 'React Component Demo',
     demo: 'http://react-demo.tomas.website/',
