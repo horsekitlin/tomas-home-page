@@ -57,6 +57,17 @@ const cards = [
       '基於 Docker 的 CI/CD 工具 Drone 所有編譯、測試的流程都在 Docker 容器中進行。',
       '開發者只需在專案中增加一個 .drone.yml 文件，將程式碼推送到 git，Drone 就能够自動化的进行編譯、測試、發布。'
     ]
+  },
+  {
+    image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
+    header: 'Block chain pet store',
+    demo: 'http://pet-store.tomas.website/',
+    members: [
+      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin/pet-shop'}
+    ],
+    description: [
+      '第一個Dapp 區塊鏈的寵物商店實作',
+    ]
   }
 ];
 
