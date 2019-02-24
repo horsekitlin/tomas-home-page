@@ -60,11 +60,6 @@ function Header(props) {
             </Hidden>
             <Grid item xs />
             <Grid item>
-              <Typography className={classes.link} component="a" href="#">
-                Go to docs
-              </Typography>
-            </Grid>
-            <Grid item>
               <Tooltip title="Alerts • No alters">
                 <IconButton color="inherit">
                   <NotificationsIcon />
@@ -73,7 +68,7 @@ function Header(props) {
             </Grid>
             <Grid item>
               <IconButton color="inherit" className={classes.iconButtonAvatar}>
-                <Avatar className={classes.avatar} src="/static/images/avatar/1.jpg" />
+                <Avatar className={classes.avatar} src='https://avatars3.githubusercontent.com/u/2120644?s=460&v=4' />
               </IconButton>
             </Grid>
           </Grid>
@@ -93,18 +88,18 @@ function Header(props) {
                 React web sites Information
               </Typography>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <Button className={classes.button} variant="outlined" color="inherit" size="small">
                 Web setup
               </Button>
-            </Grid>
-            <Grid item>
+            </Grid> */}
+            {/* <Grid item>
               <Tooltip title="Help">
                 <IconButton color="inherit">
                   <HelpIcon />
                 </IconButton>
               </Tooltip>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Toolbar>
       </AppBar>
