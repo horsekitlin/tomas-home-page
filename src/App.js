@@ -183,7 +183,6 @@ class Paperbase extends React.Component {
           <div className={classes.appContent}>
             <Header onDrawerToggle={this.handleDrawerToggle} />
             <main className={classes.mainContent}>
-            <h1>hello world</h1>
               <Content />
             </main>
           </div>
