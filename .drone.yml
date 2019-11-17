@@ -7,6 +7,12 @@ platform:
   os: linux
 
 steps:
+  - name: test
+    image: node
+    commands:
+      - pwd
+      - ls
+
   - name: scp files
     image: appleboy/drone-scp
     pull: true
