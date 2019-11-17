@@ -2,12 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
-import Navigator from './components/Navigator';
-import Content from './components/Content';
-import Header from './components/Header';
 import "font-awesome/css/font-awesome.css";
 
 let theme = createMuiTheme({
@@ -164,8 +159,6 @@ class Paperbase extends React.Component {
     console.log("send add item request");
   }
   render() {
-    const { classes } = this.props;
-
     return (
       <MuiThemeProvider theme={theme}>
         <Button onClick={this.addItem}>新增</Button>
@@ -179,27 +172,3 @@ Paperbase.propTypes = {
 };
 
 export default withStyles(styles)(Paperbase);
-
-{/* <div className={classes.root}>
-          <CssBaseline />
-          
-          <nav className={classes.drawer}>
-            <Hidden smUp implementation="js">
-              <Navigator
-                PaperProps={{ style: { width: drawerWidth } }}
-                variant="temporary"
-                open={this.state.mobileOpen}
-                onClose={this.handleDrawerToggle}
-              />
-            </Hidden>
-            <Hidden xsDown implementation="css">
-              <Navigator PaperProps={{ style: { width: drawerWidth } }} />
-            </Hidden>
-          </nav>
-          <div className={classes.appContent}>
-            <Header onDrawerToggle={this.handleDrawerToggle} />
-            <main className={classes.mainContent}>
-              <Content />
-            </main>
-          </div>
-        </div> */}
