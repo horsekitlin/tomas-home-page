@@ -159,12 +159,27 @@ class Paperbase extends React.Component {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
+  addItem = () => {
+    console.log("send add item request");
+  }
   render() {
     const { classes } = this.props;
 
     return (
       <MuiThemeProvider theme={theme}>
-        <div className={classes.root}>
+        <Button onClick={this.addItem}>新增</Button>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+Paperbase.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Paperbase);
+
+{/* <div className={classes.root}>
           <CssBaseline />
           <nav className={classes.drawer}>
             <Hidden smUp implementation="js">
@@ -185,14 +200,4 @@ class Paperbase extends React.Component {
               <Content />
             </main>
           </div>
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
-
-Paperbase.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Paperbase);
+        </div> */}
