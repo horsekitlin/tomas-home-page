@@ -16,7 +16,8 @@ steps:
       port: 22
       username: root
       user: root
-      secrets: [ ssh_password ]
+      password: 
+        from_secret: ssh_password
       target: /root
       source:
         - /drone/src/github.com/horsekitlin/tomas-home-page
@@ -30,7 +31,8 @@ steps:
         - 139.162.9.68
       username: root
       user: root
-      secrets: [ ssh_password ]
+      password: 
+        from_secret: ssh_password
       command_timeout: 600
       script:
         - . /root/.nvm/nvm.sh && nvm use 10.9.0
