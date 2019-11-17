@@ -10,6 +10,8 @@ steps:
   - name: test
     image: node
     commands:
+      - yarn install
+      - yarn build
       - pwd
       - ls
 
