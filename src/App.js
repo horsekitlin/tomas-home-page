@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
+import Button from '@material-ui/core/Button';
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
