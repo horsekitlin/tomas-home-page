@@ -20,7 +20,7 @@ const items = [
   {
     image: 'https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png',
     header: 'React Component Demo',
-    demo: 'http://react-demo.tomas.website/',
+    demo: 'https://react-demo.tomas.website/',
     github: 'https://github.com/horsekitlin/react-demo',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
@@ -33,7 +33,7 @@ const items = [
   {
     image: 'http://drawlife.tomas.website/images/lollipop-3.png',
     header: '繪圖人生(DrawLife)',
-    demo: 'http://drawlife.tomas.website/',
+    demo: 'https://drawlife.tomas.website/',
     github: 'https://github.com/horsekitlin/drawlife',
     members: [
       {name: 'Louis Jeng', url: 'https://github.com/louisje'},
@@ -50,7 +50,7 @@ const items = [
   {
     image: 'https://cdn-images-1.medium.com/max/1600/1*N7vcpmENqVHTLhgjbrbsFg.jpeg',
     header: 'Drone CI/CD',
-    demo: 'http://ci.tomas.website/',
+    demo: 'https://ci.tomas.website/',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
     ],
@@ -62,7 +62,7 @@ const items = [
   {
     image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
     header: 'Block chain pet store',
-    demo: 'http://pet-store.tomas.website/',
+    demo: 'https://pet-store.tomas.website/',
     github: 'https://github.com/horsekitlin/pet-shop',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
