@@ -1,36 +1,51 @@
-pipeline:
-  scp:
-    image: appleboy/drone-scp
-    pull: true
-    host: 
-      - 139.162.9.68
-    port: 22
-    username: root
-    user: root
-    secrets: [ ssh_password ]
-    target: /root
-    source:
-      - /drone/src/github.com/horsekitlin/tomas-home-page
-    when:
-      branch: master
+kind: pipeline
+type: docker
+name: linux-amd64
 
-  ssh:
-    image: appleboy/drone-ssh
-    host: 
-      - 139.162.9.68
-    username: root
-    user: root
-    secrets: [ ssh_password ]
-    command_timeout: 600
-    script:
-      - . /root/.nvm/nvm.sh && nvm use 10.9.0
-      - mkdir -p /var/www/html/home.tomas.website
-      - cd /root/drone/src/github.com/horsekitlin/tomas-home-page
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+  - name: test
+    image: node
+    commands:
       - yarn install
       - yarn build
-      - cp -a build/* /var/www/html/home.tomas.website
-      - cd /root
-      - rm -rf /root/drone
-    when:
-      branch: master
-      
+      - pwd
+      - ls
+
+  - name: scp files
+    image: appleboy/drone-scp
+    pull: true
+    settings:
+      host: 
+      - 139.162.9.68
+      port: 22
+      username: root
+      user: root
+      password: 
+        from_secret: ssh_password
+      target: /root
+      source:
+        - /drone/src/build
+      when:
+        branch: master
+
+  - name: ssh files
+    image: appleboy/drone-scp
+    pull: true
+    settings:
+      host: 
+        - 139.162.9.68
+      username: root
+      user: root
+      password: 
+        from_secret: ssh_password
+      command_timeout: 600
+      script:
+        - ./root/.nvm/nvm.sh && nvm use 10.9.0
+        - mkdir -p /var/www/html/home.tomas.website
+        - ls /root
+      when:
+        branch: master
