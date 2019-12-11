@@ -12,8 +12,6 @@ steps:
     commands:
       - yarn install
       - yarn build
-      - pwd
-      - ls
 
   - name: scp files
     image: appleboy/drone-scp
