@@ -18,6 +18,7 @@ steps:
       - echo ${USERNAME}
       - printenv | more
 
+
   # - name: scp files
   #   image: appleboy/drone-scp
   #   pull: true
