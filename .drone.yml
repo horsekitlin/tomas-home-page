@@ -9,14 +9,11 @@ platform:
 steps:
   - name: test
     image: node
-    environment:
-    PERCY_TOKEN:
-      from_secret: test_env
-    envs: [ PERCY_TOKEN ]
+    secrets: [ docker_username, docker_password ]
     commands:
-      - echo $PERCY_TOKEN
-      - echo ${PERCY_TOKEN}
-      - printenv | more
+      - echo $DOCKER_USERNAME
+      - echo $DOCKER_PASSWORD
+    
 
 
   # - name: scp files
