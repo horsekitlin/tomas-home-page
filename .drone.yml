@@ -12,6 +12,7 @@ steps:
     environment:
       USERNAME:
         from_secret: MAC_USER
+    envs: [ USERNAME ]
     commands:
       - echo $USERNAME
       - echo ${USERNAME}
