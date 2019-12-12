@@ -10,12 +10,12 @@ steps:
   - name: test
     image: node
     environment:
-      USERNAME:
-        from_secret: MAC_USER
+    PERCY_TOKEN:
+      from_secret: test_env
     envs: [ USERNAME ]
     commands:
-      - echo $USERNAME
-      - echo ${USERNAME}
+      - echo $PERCY_TOKEN
+      - echo ${PERCY_TOKEN}
       - printenv | more
 
 
