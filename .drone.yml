@@ -9,9 +9,11 @@ platform:
 steps:
   - name: test
     image: node
-    secrets: [ test_env ]
+    environment:
+      USERNAME:
+        from_secret: MAC_USER
     commands:
-      - echo ${TEST_ENV}
+      - echo $USERNAME
 
   # - name: scp files
   #   image: appleboy/drone-scp
