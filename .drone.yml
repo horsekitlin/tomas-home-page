@@ -9,12 +9,15 @@ platform:
 steps:
   - name: test
     image: node
-    secrets: [ docker_username, docker_password ]
+    environment:
+      USERNAME:
+        from_secret: docker_username
+      PASSWORD:
+        from_secret: docker_password
     commands:
       - echo $DOCKER_USERNAME
       - echo $DOCKER_PASSWORD
-    
-
+      - printenv | more
 
   # - name: scp files
   #   image: appleboy/drone-scp
