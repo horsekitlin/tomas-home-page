@@ -12,9 +12,9 @@ steps:
     envs: [docker_username, docker_password]
     environment:
       VERSION: "${docker_username}"
-      username:
+      USERNAME:
         from_secret: docker_username
-      password:
+      PASSWORD:
         from_secret: docker_password
     commands:
       - echo $USERNAME
