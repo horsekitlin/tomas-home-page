@@ -12,7 +12,7 @@ steps:
     environment:
     PERCY_TOKEN:
       from_secret: test_env
-    envs: [ USERNAME ]
+    envs: [ PERCY_TOKEN ]
     commands:
       - echo $PERCY_TOKEN
       - echo ${PERCY_TOKEN}
