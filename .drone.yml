@@ -9,14 +9,15 @@ platform:
 steps:
   - name: test
     image: node
+    envs: [docker_username, docker_password]
     environment:
-      USERNAME:
+      username:
         from_secret: docker_username
-      PASSWORD:
+      password:
         from_secret: docker_password
     commands:
-      - echo $DOCKER_USERNAME
-      - echo $DOCKER_PASSWORD
+      - echo $USERNAME
+      - echo $PASSWORD
       - printenv | more
 
   # - name: scp files
