@@ -11,6 +11,7 @@ steps:
     image: node
     envs: [docker_username, docker_password]
     environment:
+      VERSION: "${docker_username}"
       username:
         from_secret: docker_username
       password:
