@@ -5,6 +5,14 @@ platform:
   arch: amd64
   os: linux
 
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: username
+  password:
+    from_secret: password
+
 steps:
   - name: test
     image: node
@@ -16,6 +24,7 @@ steps:
       PASSWORD:
         from_secret: docker_password
     commands:
+      - ifconfig
       - echo $USERNAME
       - echo $PASSWORD
       - printenv | more
