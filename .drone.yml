@@ -8,41 +8,49 @@ platform:
 steps:
   - name: test
     image: node
+    envs: [docker_username, docker_password]
+    environment:
+      VERSION: "${docker_username}"
+      USERNAME:
+        from_secret: docker_username
+      PASSWORD:
+        from_secret: docker_password
     commands:
-      - yarn install
-      - yarn build
+      - echo $USERNAME
+      - echo $PASSWORD
+      - printenv | more
 
-  - name: scp files
-    image: appleboy/drone-scp
-    pull: true
-    settings:
-      host: 
-      - 139.162.9.68
-      port: 22
-      username: root
-      user: root
-      password: 
-        from_secret: ssh_password
-      target: /root
-      source:
-        - /drone/src/build
-      when:
-        branch: master
+  # - name: scp files
+  #   image: appleboy/drone-scp
+  #   pull: true
+  #   settings:
+  #     host: 
+  #     - 139.162.9.68
+  #     port: 22
+  #     username: root
+  #     user: root
+  #     password: 
+  #       from_secret: ssh_password
+  #     target: /root
+  #     source:
+  #       - /drone/src/build
+  #     when:
+  #       branch: master
 
-  - name: ssh files
-    image: appleboy/drone-scp
-    pull: true
-    settings:
-      host: 
-        - 139.162.9.68
-      username: root
-      user: root
-      password: 
-        from_secret: ssh_password
-      command_timeout: 600
-      script:
-        - ./root/.nvm/nvm.sh && nvm use 10.9.0
-        - mkdir -p /var/www/html/home.tomas.website
-        - ls /root
-      when:
-        branch: master
+  # - name: ssh files
+  #   image: appleboy/drone-scp
+  #   pull: true
+  #   settings:
+  #     host: 
+  #       - 139.162.9.68
+  #     username: root
+  #     user: root
+  #     password: 
+  #       from_secret: ssh_password
+  #     command_timeout: 600
+  #     script:
+  #       - ./root/.nvm/nvm.sh && nvm use 10.9.0
+  #       - mkdir -p /var/www/html/home.tomas.website
+  #       - ls /root
+  #     when:
+  #       branch: master
