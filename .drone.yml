@@ -10,16 +10,10 @@ steps:
   - name: test
     image: node
     envs: [docker_username, docker_password]
-    environment:
-      VERSION: "${docker_username}"
-      USERNAME:
-        from_secret: docker_username
-      PASSWORD:
-        from_secret: docker_password
+    when:
+      branch: master
     commands:
-      - echo $USERNAME
-      - echo $PASSWORD
-      - printenv | more
+      - printenv | more 
 
   # - name: scp files
   #   image: appleboy/drone-scp
