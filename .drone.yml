@@ -24,7 +24,6 @@ steps:
       PASSWORD:
         from_secret: docker_password
     commands:
-      - ifconfig
       - echo $USERNAME
       - echo $PASSWORD
       - printenv | more
