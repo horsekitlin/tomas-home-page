@@ -51,7 +51,8 @@ steps:
         from_secret: ssh_password
       script:
         - ./root/.nvm/nvm.sh && nvm use 10.9.0
+        - ifconfig
         - mkdir -p /var/www/html/home.tomas.website
-        - ls /root
+        - ls /root        
       when:
         branch: master
