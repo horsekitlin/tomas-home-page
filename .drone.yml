@@ -1,11 +1,10 @@
 kind: pipeline
-type: ssh
-name: default
-server:
-  host: 59.120.148.49
-  user: root
-  password:
-    from_secret: ssh_password
+type: drone
+type: docker
+name: linux-amd64
+platform:
+  arch: amd64
+  os: linux
 
 steps:
   # - name: test
