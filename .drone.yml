@@ -8,18 +8,18 @@ server:
     from_secret: ssh_password
 
 steps:
-  - name: test
-    image: node
-    envs: [docker_username, docker_password]
-    environment:
-      PASSWORD:
-        from_secret: password
-      USERNAME:
-        from_secret: username
-    commands:
-      - echo $USERNAME
-      - echo $PASSWORD
-      - printenv | more
+  # - name: test
+  #   image: node
+  #   envs: [docker_username, docker_password]
+  #   environment:
+  #     PASSWORD:
+  #       from_secret: password
+  #     USERNAME:
+  #       from_secret: username
+  #   commands:
+  #     - echo $USERNAME
+  #     - echo $PASSWORD
+  #     - printenv | more
 
   # - name: scp files
   #   image: appleboy/drone-scp
@@ -38,20 +38,22 @@ steps:
   #     when:
   #       branch: master
 
-  # - name: ssh files
-  #   image: appleboy/drone-scp
-  #   pull: true
-  #   settings:
-  #     host: 
-  #       - 139.162.9.68
-  #     username: root
-  #     user: root
-  #     password: 
-  #       from_secret: ssh_password
-  #     command_timeout: 600
-  #     script:
-  #       - ./root/.nvm/nvm.sh && nvm use 10.9.0
-  #       - mkdir -p /var/www/html/home.tomas.website
-  #       - ls /root
-  #     when:
-  #       branch: master
+  - name: ssh files
+    image: appleboy/drone-ssh
+    pull: true
+    settings:
+      host: 
+        from_secret: host
+      username: 
+        from_secret: username
+      user: 
+        from_secret: username
+      password: 
+        from_secret: ssh_password
+      command_timeout: 600
+      script:
+        - ./root/.nvm/nvm.sh && nvm use 10.9.0
+        - mkdir -p /var/www/html/home.tomas.website
+        - ls /root
+      when:
+        branch: master
