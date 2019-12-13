@@ -6,12 +6,9 @@ platform:
   os: linux
 
 server:
-  host:
-    from_secret: host
-  user:
-    from_secret: username
-  password:
-    from_secret: password
+  host: 59.120.148.49
+  user: root
+  password: xup6jo3fup6
 
 steps:
   - name: test
