@@ -36,7 +36,6 @@ steps:
   #       - /drone/src/build
   #     when:
   #       branch: master
-
   - name: ssh files
     image: appleboy/drone-ssh
     pull: true
