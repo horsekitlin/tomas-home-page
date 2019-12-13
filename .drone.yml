@@ -1,9 +1,11 @@
 kind: pipeline
-type: docker
-name: linux-amd64
-platform:
-  arch: amd64
-  os: linux
+type: ssh
+name: default
+server:
+  host: 59.120.148.49
+  user: root
+  password:
+    from_secret: ssh_password
 
 steps:
   - name: test
