@@ -6,7 +6,7 @@ pipeline:
       - yarn global add gulp-cli
     when:
       branch: master
-buld_and_deploy:
+  buld_and_deploy:
     image: node
     pull: true
     commands:
