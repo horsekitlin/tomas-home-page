@@ -3,6 +3,6 @@ pipeline:
     image: node
     pull: true
     commands:
-      - printenv | more 
+      - gulp
     when:
       branch: master
