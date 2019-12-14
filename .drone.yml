@@ -10,6 +10,6 @@ pipeline:
     image: node
     pull: true
     commands:
-      - gulp
+      - ./node_modules/gulp/bin/gulp.js default
     when:
       branch: master
