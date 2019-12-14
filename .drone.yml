@@ -3,6 +3,7 @@ pipeline:
     image: node
     pull: true
     commands:
+      - pwd
       - yarn install
       - rm -rf build
       - git pull origin master
