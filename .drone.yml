@@ -8,5 +8,6 @@ pipeline:
       - rm -rf build
       - git pull origin master
       - ./node_modules/gulp/bin/gulp.js default
+      - echo $CI_WORKSPACE
     when:
       branch: master
