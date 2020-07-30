@@ -5,4 +5,5 @@ before_script:
   - npm install -g gulp-cli
 script:
   - yarn install
+  - yarn build
   - ./node_modules/gulp-cli/bin/gulp.js deploy
