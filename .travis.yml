@@ -4,8 +4,5 @@ node_js:
 before_script:
   - npm install -g gulp-cli
 script:
-  - rm -rf node_modules
-  - ls
-  - pwd
   - yarn install
   - ./node_modules/gulp-cli/bin/gulp.js deploy
