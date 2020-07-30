@@ -5,6 +5,5 @@ before_install:
   - npm i -g yarn
   - npm install -g pm2
 script: 
-  - cd server
   - yarn install
   - ./node_modules/gulp-cli/bin/gulp.js
