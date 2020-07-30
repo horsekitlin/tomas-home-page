@@ -1,8 +1,6 @@
 const gulp = require('gulp');
-const shell = require('gulp-shell');
 const scp = require('gulp-scp2');
 
-const destPath = `/var/www/html/home.tomas.website`;
 const {
   HOST,
   DEST,
@@ -10,7 +8,7 @@ const {
   PASSWORD,
 } = process.env;
 
-gulp.task('default', async () => {
+gulp.task('deploy', async () => {
   return gulp.src('./build/**')
   .pipe(scp({
     host: HOST,
@@ -21,9 +19,4 @@ gulp.task('default', async () => {
   .on('error', function(err) {
     console.log(err);
   });
-  // return gulp
-  //   .src('*.js', { read: false })
-  //   .pipe(shell("yarn build"))
-  //   .pipe(shell(`mkdir -p ${destPath}`))
-  //   .pipe(shell(`cp -a ./build/**/* ${destPath}`));
 });
