@@ -11,8 +11,6 @@ const {
 } = process.env;
 
 gulp.task('default', async () => {
-  console.log(process.env);
-  console.log(process.env.HOST);
   return gulp.src('./build/**')
   .pipe(scp({
     host: HOST,
