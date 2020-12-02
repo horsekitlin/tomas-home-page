@@ -13,7 +13,7 @@ import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'; 
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
   card: {
@@ -60,18 +60,7 @@ class RecipeReviewCard extends React.Component {
     return (
       <Card className={classes.card}>
         <CardHeader
-          // avatar={
-          //   <Avatar aria-label="Recipe" className={classes.avatar}>
-          //     {content.image}
-          //   </Avatar>
-          // }
-          // action={
-          //   <IconButton>
-          //     <MoreVertIcon />
-          //   </IconButton>
-          // }
           title={content.header}
-          // subheader="September 14, 2016"
         />
         <CardMedia
           className={classes.media}
@@ -79,10 +68,12 @@ class RecipeReviewCard extends React.Component {
           title="Paella dish"
         />
         <CardContent>
-          <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
-          </Typography>
+          {content.description.map((text, index) => (
+            <Typography component="p" key={`content-text-${index}`}>
+              {text}
+            </Typography>
+          ))}
+
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton

@@ -48,15 +48,14 @@ const items = [
     ]
   },
   {
-    image: 'https://cdn-images-1.medium.com/max/1600/1*N7vcpmENqVHTLhgjbrbsFg.jpeg',
-    header: 'Drone CI/CD',
-    demo: 'https://ci.tomas.website/',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg',
+    header: 'Jenkins CI/CD',
+    demo: 'https://jenkins.tomas.website/',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
     ],
     description: [
-      '基於 Docker 的 CI/CD 工具 Drone 所有編譯、測試的流程都在 Docker 容器中進行。',
-      '開發者只需在專案中增加一個 .drone.yml 文件，將程式碼推送到 git，Drone 就能够自動化的进行編譯、測試、發布。'
+      'Jenkins Cloud',
     ]
   },
   {
