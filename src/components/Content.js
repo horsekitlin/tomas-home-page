@@ -18,7 +18,7 @@ const items = [
     ]
   },
   {
-    image: 'https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/280px-React-icon.svg.png',
     header: 'React Component Demo',
     demo: 'https://react-demo.tomas.website/',
     github: 'https://github.com/horsekitlin/react-demo',
