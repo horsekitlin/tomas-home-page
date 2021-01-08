@@ -30,6 +30,18 @@ const items = [
       '陸續新增中...'
     ]
   },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/280px-React-icon.svg.png',
+    header: 'React Admin Demo',
+    demo: 'https://admindemo.tomas.website/',
+    github: 'https://github.com/horsekitlin/react-skelton',
+    members: [
+      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
+    ],
+    description: [
+      'React Admin Demo'
+    ]
+  },
   // {
   //   image: 'http://drawlife.tomas.website/images/lollipop-3.png',
   //   header: '繪圖人生(DrawLife)',
