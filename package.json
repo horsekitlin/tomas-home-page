@@ -7,15 +7,11 @@
     "@material-ui/icons": "^3.0.2",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
-    "gulp": "^4.0.2",
-    "gulp-shell": "^0.7.1",
     "history": "^4.7.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
-    "semantic-ui-css": "^2.3.3",
-    "semantic-ui-react": "^0.82.5"
+    "react-scripts": "1.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,6 +20,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
     "gulp-scp2": "^0.2.0"
   }
 }
