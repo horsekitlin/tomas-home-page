@@ -20,7 +20,8 @@ const styles = theme => ({
     maxWidth: 400,
   },
   media: {
-    height: 0,
+    height: 300,
+    width: 300,
     paddingTop: '56.25%', // 16:9
   },
   actions: {
@@ -93,6 +94,7 @@ class RecipeReviewCard extends React.Component {
             <Icon className={classNames(classes.icon, 'fa fa-eye')} />
           </IconButton>
           <IconButton
+            disabled={!Array.isArray(content.collapseDesc)}
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
             })}
@@ -103,14 +105,21 @@ class RecipeReviewCard extends React.Component {
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>Method:</Typography>
-            <Typography paragraph>
-              {content.description}
-            </Typography>
-          </CardContent>
-        </Collapse>
+        {
+          Array.isArray(content.collapseDesc)
+            ? (
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography paragraph>Method:</Typography>
+                  <Typography paragraph>
+                    {content.collapseDesc}
+                  </Typography>
+                </CardContent>
+              </Collapse>
+            )
+            : (<React.Fragment />)
+        }
+
       </Card>
     );
   }

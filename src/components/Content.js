@@ -30,27 +30,27 @@ const items = [
       '陸續新增中...'
     ]
   },
-  {
-    image: 'http://drawlife.tomas.website/images/lollipop-3.png',
-    header: '繪圖人生(DrawLife)',
-    demo: 'https://drawlife.tomas.website/',
-    github: 'https://github.com/horsekitlin/drawlife',
-    members: [
-      {name: 'Louis Jeng', url: 'https://github.com/louisje'},
-      {name: 'Chris Lin', url: 'https://github.com/chris-lin'},
-      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'},
-      {name: 'Simon', url: 'https://github.com/SimonOssii'},
-      {name: 'Sean Lin', url: 'https://github.com/seanlin0324'}
-    ],
-    description: [
-      '「繪塗人生」是一個具有塗鴉板功能的聊天室',
-      '是「Taiwan Up Up 好好玩」團隊參加 Nodeknockout 2012 的參賽作品。'
-    ]
-  },
+  // {
+  //   image: 'http://drawlife.tomas.website/images/lollipop-3.png',
+  //   header: '繪圖人生(DrawLife)',
+  //   demo: 'https://drawlife.tomas.website/',
+  //   github: 'https://github.com/horsekitlin/drawlife',
+  //   members: [
+  //     {name: 'Louis Jeng', url: 'https://github.com/louisje'},
+  //     {name: 'Chris Lin', url: 'https://github.com/chris-lin'},
+  //     {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'},
+  //     {name: 'Simon', url: 'https://github.com/SimonOssii'},
+  //     {name: 'Sean Lin', url: 'https://github.com/seanlin0324'}
+  //   ],
+  //   description: [
+  //     '「繪塗人生」是一個具有塗鴉板功能的聊天室',
+  //     '是「Taiwan Up Up 好好玩」團隊參加 Nodeknockout 2012 的參賽作品。'
+  //   ]
+  // },
   {
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg',
     header: 'Jenkins CI/CD',
-    demo: 'https://jenkins.tomas.website/',
+    demo: 'https://ci.tomas.website/',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
     ],
@@ -58,23 +58,23 @@ const items = [
       'Jenkins Cloud',
     ]
   },
-  {
-    image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
-    header: 'Block chain pet store',
-    demo: 'https://pet-store.tomas.website/',
-    github: 'https://github.com/horsekitlin/pet-shop',
-    members: [
-      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
-    ],
-    description: [
-      '第一個Dapp 區塊鏈的寵物商店實作',
-    ]
-  }
+  // {
+  //   image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
+  //   header: 'Block chain pet store',
+  //   demo: 'https://pet-store.tomas.website/',
+  //   github: 'https://github.com/horsekitlin/pet-shop',
+  //   members: [
+  //     {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
+  //   ],
+  //   description: [
+  //     '第一個Dapp 區塊鏈的寵物商店實作',
+  //   ]
+  // }
 ];
 
 function Content(props) {
   return (
-    <Grid container spacing={16}>
+    <Grid container spacing={8}>
       {
         items.map(item => 
           <Grid item><RecipeReviewCard content={item} /></Grid>)
