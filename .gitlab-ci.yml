@@ -11,5 +11,3 @@ deployUat:
     - yarn install
     - yarn build
     - scp -i "~/pems/passontw.pem" -r ./build/** $ACCOUNT@$UAT_HOST:$TARGET
-
-
