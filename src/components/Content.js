@@ -81,18 +81,18 @@ const items = [
       '實作陽春掛單買賣系統 App API',
     ]
   },
-  // {
-  //   image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
-  //   header: 'Block chain pet store',
-  //   demo: 'https://pet-store.tomas.website/',
-  //   github: 'https://github.com/horsekitlin/pet-shop',
-  //   members: [
-  //     {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
-  //   ],
-  //   description: [
-  //     '第一個Dapp 區塊鏈的寵物商店實作',
-  //   ]
-  // }
+  {
+    image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
+    header: 'Block chain pet store',
+    demo: 'https://pet-store.tomas.website/',
+    github: 'https://github.com/horsekitlin/pet-shop',
+    members: [
+      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
+    ],
+    description: [
+      '第一個Dapp 區塊鏈的寵物商店實作',
+    ]
+  }
 ];
 
 function Content(props) {
