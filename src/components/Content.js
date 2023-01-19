@@ -71,17 +71,6 @@ const items = [
     ]
   },
   {
-    image: 'https://s.yimg.com/ny/api/res/1.2/.pI.K51jYI9E0uYuHs1QRg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTk0MDtjZj13ZWJw/https://s.yimg.com/uu/api/res/1.2/ojPEpeaF_lUTB8D.LWgXCg--~B/aD02MDc7dz02MjA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/vi/moneydj.tw/27e0c86ba2cc2a23a642b45f71f8ad65',
-    header: '點數交換App API Swagger',
-    demo: 'https://token-admin.tomas.website/api-docs/',
-    members: [
-      {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
-    ],
-    description: [
-      '實作陽春掛單買賣系統 App API',
-    ]
-  },
-  {
     image: 'https://truffleframework.com/img/tutorials/pet-shop/petshop.png',
     header: 'Block chain pet store',
     demo: 'https://pet-store.tomas.website/',
