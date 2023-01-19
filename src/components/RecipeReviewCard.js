@@ -1,48 +1,49 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from "react";
+import isEmpty from 'lodash/isEmpty';
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import { withStyles } from "@material-ui/core/styles";
+import classnames from "classnames";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import red from "@material-ui/core/colors/red";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const styles = theme => ({
+const styles = (theme) => ({
   card: {
     maxWidth: 400,
   },
   media: {
     height: 300,
     width: 300,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   actions: {
-    display: 'flex',
+    display: "flex",
   },
   expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: "rotate(180deg)",
   },
   avatar: {
     backgroundColor: red[500],
   },
   iconHover: {
     margin: theme.spacing.unit * 2,
-    '&:hover': {
+    "&:hover": {
       color: red[800],
     },
   },
@@ -52,7 +53,7 @@ class RecipeReviewCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
+    this.setState((state) => ({ expanded: !state.expanded }));
   };
 
   render() {
@@ -60,9 +61,7 @@ class RecipeReviewCard extends React.Component {
 
     return (
       <Card className={classes.card}>
-        <CardHeader
-          title={content.header}
-        />
+        <CardHeader title={content.header} />
         <CardMedia
           className={classes.media}
           image={content.image}
@@ -74,24 +73,25 @@ class RecipeReviewCard extends React.Component {
               {text}
             </Typography>
           ))}
-
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton
-            aria-label="Go To Github Repo"
-            as='a'
-            target='_blank'
-            href={content.github}
-          >
-            <Icon className={classNames(classes.icon, 'fa fa-github')} />
-          </IconButton>
+        <CardActions className={classes.actions}>
+          {isEmpty(content.github) ? null : (
+            <IconButton
+              aria-label="Go To Github Repo"
+              as="a"
+              target="_blank"
+              href={content.github}
+            >
+              <Icon className={classNames(classes.icon, "fa fa-github")} />
+            </IconButton>
+          )}
           <IconButton
             aria-label="Go To Page"
-            as='a'
-            target='_blank'
+            as="a"
+            target="_blank"
             href={content.demo}
           >
-            <Icon className={classNames(classes.icon, 'fa fa-eye')} />
+            <Icon className={classNames(classes.icon, "fa fa-eye")} />
           </IconButton>
           <IconButton
             disabled={!Array.isArray(content.collapseDesc)}
@@ -105,21 +105,16 @@ class RecipeReviewCard extends React.Component {
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
-        {
-          Array.isArray(content.collapseDesc)
-            ? (
-              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                  <Typography paragraph>Method:</Typography>
-                  <Typography paragraph>
-                    {content.collapseDesc}
-                  </Typography>
-                </CardContent>
-              </Collapse>
-            )
-            : (<React.Fragment />)
-        }
-
+        {Array.isArray(content.collapseDesc) ? (
+          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>Method:</Typography>
+              <Typography paragraph>{content.collapseDesc}</Typography>
+            </CardContent>
+          </Collapse>
+        ) : (
+          <React.Fragment />
+        )}
       </Card>
     );
   }
