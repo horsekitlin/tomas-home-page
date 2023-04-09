@@ -33,7 +33,7 @@ const items = [
   {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/280px-React-icon.svg.png',
     header: 'React Admin Demo',
-    demo: 'https://admindemo.tomas.website/',
+    demo: 'https://console-demo.passon.tw//',
     github: 'https://github.com/horsekitlin/react-skelton',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
