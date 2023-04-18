@@ -62,7 +62,7 @@ const items = [
   {
     image: 'https://cimg.cnyes.cool/prod/news/4773114/xl/0121436c0dc8d18a4b27cba339c25855.jpg',
     header: '點數交換後台 API Swagger',
-    demo: 'https://token-admin.tomas.website/api-docs/',
+    demo: 'https://token-demo-api.passon.tw//api-docs/',
     members: [
       {name: 'Tomas Lin', url: 'https://github.com/horsekitlin'}
     ],
